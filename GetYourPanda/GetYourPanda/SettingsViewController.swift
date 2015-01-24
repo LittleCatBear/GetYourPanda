@@ -27,9 +27,10 @@ class SettingsViewController: UIViewController {
     @IBAction func goClickButton(sender: AnyObject) {
         localNotification.alertAction = "alert test"
         localNotification.alertBody =  "body of alert"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow : 30)
+        localNotification.fireDate = NSDate(timeIntervalSinceNow : 5)
+        localNotification
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
-    
+ 
     
 }

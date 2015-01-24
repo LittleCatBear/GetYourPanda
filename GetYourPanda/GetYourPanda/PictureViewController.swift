@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PictureViewController: UIViewController {
+class PictureViewController: UIViewController, UIApplicationDelegate {
     
     @IBOutlet weak var customImageView: UIImageView!
     let pictureServices : PictureServices = PictureServices()
@@ -29,6 +29,11 @@ class PictureViewController: UIViewController {
         customImageView.image = pictureServices.getRedPanda()
         
     }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        println("test")
+    }
+    
     
 
 
