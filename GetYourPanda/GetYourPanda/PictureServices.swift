@@ -11,17 +11,18 @@ import UIKit
 
 class PictureServices {
     
-    var cats : [String] = ["chat1", "chat2", "chat3", "chat4"]
-    var redPandas : [String] = ["panda1", "panda2", "panda3", "panda4", "panda5"]
+    let cats : [String] = ["chat1", "chat2", "chat3", "chat4"]
+    let redPandas : [String] = ["panda1", "panda2", "panda3", "panda4", "panda5"]
     
     func getRedPanda() -> UIImage{
-        let randNum : Int = Int(rand()) % (redPandas.count - 1)
+        
+        let randNum : Int = Int(arc4random()) % (redPandas.count - 1)
         let redPanda : UIImage = UIImage(named: redPandas[randNum])!
         return redPanda
     }
     
     func getCat() -> UIImage{
-        let randNum : Int = Int(rand()) % (cats.count - 1)
+        let randNum : Int = Int(arc4random()) % (cats.count - 1)
         let cat : UIImage = UIImage(named: cats[randNum])!
         return cat
     }

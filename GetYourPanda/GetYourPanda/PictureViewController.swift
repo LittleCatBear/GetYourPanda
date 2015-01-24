@@ -10,6 +10,9 @@ import UIKit
 
 class PictureViewController: UIViewController {
     
+    @IBOutlet weak var customImageView: UIImageView!
+    let pictureServices : PictureServices = PictureServices()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +26,7 @@ class PictureViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
-        
+        customImageView.image = pictureServices.getRedPanda()
         
     }
     

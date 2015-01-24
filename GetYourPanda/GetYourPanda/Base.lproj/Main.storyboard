@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EyY-x9-9CU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Picture View Controller-->
@@ -15,11 +16,160 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hJ-Xd-UUc">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8hJ-Xd-UUc" secondAttribute="trailing" id="6XU-ZT-rzi"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8hJ-Xd-UUc" secondAttribute="bottom" id="cFF-EV-Vw7"/>
+                            <constraint firstItem="8hJ-Xd-UUc" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="gGN-tY-eO1"/>
+                            <constraint firstItem="8hJ-Xd-UUc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="zDW-wT-DOw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6XU-ZT-rzi"/>
+                                <exclude reference="gGN-tY-eO1"/>
+                                <exclude reference="zDW-wT-DOw"/>
+                                <exclude reference="cFF-EV-Vw7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="6XU-ZT-rzi"/>
+                                <include reference="gGN-tY-eO1"/>
+                                <include reference="zDW-wT-DOw"/>
+                                <include reference="cFF-EV-Vw7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="customImageView" destination="8hJ-Xd-UUc" id="QKP-Z0-qCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="388.5" y="317.25"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="oHN-31-5Ds">
+            <objects>
+                <viewController id="EyY-x9-9CU" customClass="SettingsViewController" customModule="GetYourPanda" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ZK-ST-HFn"/>
+                        <viewControllerLayoutGuide type="bottom" id="goQ-AO-I7G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bMe-O7-kVX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwl-wE-4zp">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTW-Tg-uNM">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkb-gV-UY9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red pandas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shb-oB-fAX">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A bit of cuteness in a world of heavies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6C-FU-V0O">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRm-Fx-6sM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="GO">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goClickButton:" destination="EyY-x9-9CU" eventType="touchUpInside" id="Owg-95-smM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fwl-wE-4zp" firstAttribute="trailing" secondItem="bMe-O7-kVX" secondAttribute="trailingMargin" id="Fj1-p5-xv1"/>
+                            <constraint firstItem="fwl-wE-4zp" firstAttribute="top" secondItem="F6C-FU-V0O" secondAttribute="bottom" constant="184" id="QQG-pF-K8F"/>
+                            <constraint firstItem="iTW-Tg-uNM" firstAttribute="top" secondItem="fwl-wE-4zp" secondAttribute="bottom" constant="31" id="WEX-5D-BMs"/>
+                            <constraint firstItem="goQ-AO-I7G" firstAttribute="top" secondItem="sRm-Fx-6sM" secondAttribute="bottom" constant="62" id="cUi-Rj-iha"/>
+                            <constraint firstItem="Shb-oB-fAX" firstAttribute="top" secondItem="Tkb-gV-UY9" secondAttribute="bottom" constant="41" id="d0a-LR-ieo"/>
+                            <constraint firstItem="Tkb-gV-UY9" firstAttribute="leading" secondItem="bMe-O7-kVX" secondAttribute="leadingMargin" id="eIk-yP-X6S"/>
+                            <constraint firstAttribute="centerX" secondItem="F6C-FU-V0O" secondAttribute="centerX" id="nbv-Oc-Ufi"/>
+                            <constraint firstAttribute="centerX" secondItem="sRm-Fx-6sM" secondAttribute="centerX" id="nsR-Yh-sRc"/>
+                            <constraint firstItem="Shb-oB-fAX" firstAttribute="leading" secondItem="bMe-O7-kVX" secondAttribute="leadingMargin" id="r3b-Bs-WNo"/>
+                            <constraint firstItem="F6C-FU-V0O" firstAttribute="top" secondItem="1ZK-ST-HFn" secondAttribute="bottom" constant="8" id="til-gs-rfa"/>
+                            <constraint firstItem="Tkb-gV-UY9" firstAttribute="top" secondItem="1ZK-ST-HFn" secondAttribute="bottom" constant="218" id="wS4-Mb-sZu"/>
+                            <constraint firstItem="iTW-Tg-uNM" firstAttribute="trailing" secondItem="bMe-O7-kVX" secondAttribute="trailingMargin" id="wdv-Nd-pQP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fwl-wE-4zp"/>
+                                <exclude reference="iTW-Tg-uNM"/>
+                                <exclude reference="Tkb-gV-UY9"/>
+                                <exclude reference="Shb-oB-fAX"/>
+                                <exclude reference="F6C-FU-V0O"/>
+                                <exclude reference="sRm-Fx-6sM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nbv-Oc-Ufi"/>
+                                <exclude reference="til-gs-rfa"/>
+                                <exclude reference="eIk-yP-X6S"/>
+                                <exclude reference="wS4-Mb-sZu"/>
+                                <exclude reference="d0a-LR-ieo"/>
+                                <exclude reference="r3b-Bs-WNo"/>
+                                <exclude reference="Fj1-p5-xv1"/>
+                                <exclude reference="QQG-pF-K8F"/>
+                                <exclude reference="WEX-5D-BMs"/>
+                                <exclude reference="wdv-Nd-pQP"/>
+                                <exclude reference="nsR-Yh-sRc"/>
+                                <exclude reference="cUi-Rj-iha"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fwl-wE-4zp"/>
+                                <include reference="iTW-Tg-uNM"/>
+                                <include reference="Tkb-gV-UY9"/>
+                                <include reference="Shb-oB-fAX"/>
+                                <include reference="F6C-FU-V0O"/>
+                                <include reference="sRm-Fx-6sM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nbv-Oc-Ufi"/>
+                                <include reference="til-gs-rfa"/>
+                                <include reference="eIk-yP-X6S"/>
+                                <include reference="wS4-Mb-sZu"/>
+                                <include reference="d0a-LR-ieo"/>
+                                <include reference="r3b-Bs-WNo"/>
+                                <include reference="Fj1-p5-xv1"/>
+                                <include reference="QQG-pF-K8F"/>
+                                <include reference="WEX-5D-BMs"/>
+                                <include reference="wdv-Nd-pQP"/>
+                                <include reference="nsR-Yh-sRc"/>
+                                <include reference="cUi-Rj-iha"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="catSwitch" destination="fwl-wE-4zp" id="B2b-47-lvg"/>
+                        <outlet property="redPandaSwitch" destination="iTW-Tg-uNM" id="kqf-MY-f8m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ptk-RU-ucd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="317.25"/>
         </scene>
     </scenes>
 </document>

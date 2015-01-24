@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E331D2211A73742200ACDBFF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331D2201A73742200ACDBFF /* SettingsViewController.swift */; };
 		E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3231A73681300FAFBEE /* AppDelegate.swift */; };
 		E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3251A73681300FAFBEE /* PictureViewController.swift */; };
 		E3B6E3291A73681300FAFBEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B6E3271A73681300FAFBEE /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E331D2201A73742200ACDBFF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E3B6E31E1A73681300FAFBEE /* GetYourPanda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYourPanda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6E3221A73681300FAFBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B6E3231A73681300FAFBEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				E3B6E3251A73681300FAFBEE /* PictureViewController.swift */,
 				E3B6E3431A736A1B00FAFBEE /* PictureServices.swift */,
 				E3B6E3271A73681300FAFBEE /* Main.storyboard */,
+				E331D2201A73742200ACDBFF /* SettingsViewController.swift */,
 				E3B6E32A1A73681300FAFBEE /* Images.xcassets */,
 				E3B6E32C1A73681300FAFBEE /* LaunchScreen.xib */,
 				E3B6E3211A73681300FAFBEE /* Supporting Files */,
@@ -218,6 +221,7 @@
 				E3B6E3441A736A1B00FAFBEE /* PictureServices.swift in Sources */,
 				E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */,
 				E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */,
+				E331D2211A73742200ACDBFF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				E3B6E33F1A73681300FAFBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3B6E3401A73681300FAFBEE /* Build configuration list for PBXNativeTarget "GetYourPandaTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				E3B6E3421A73681300FAFBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
