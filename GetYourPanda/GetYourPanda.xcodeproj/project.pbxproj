@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3231A73681300FAFBEE /* AppDelegate.swift */; };
-		E3B6E3261A73681300FAFBEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3251A73681300FAFBEE /* ViewController.swift */; };
+		E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3251A73681300FAFBEE /* PictureViewController.swift */; };
 		E3B6E3291A73681300FAFBEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B6E3271A73681300FAFBEE /* Main.storyboard */; };
 		E3B6E32B1A73681300FAFBEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B6E32A1A73681300FAFBEE /* Images.xcassets */; };
 		E3B6E32E1A73681300FAFBEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B6E32C1A73681300FAFBEE /* LaunchScreen.xib */; };
 		E3B6E33A1A73681300FAFBEE /* GetYourPandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3391A73681300FAFBEE /* GetYourPandaTests.swift */; };
+		E3B6E3441A736A1B00FAFBEE /* PictureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3431A736A1B00FAFBEE /* PictureServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		E3B6E31E1A73681300FAFBEE /* GetYourPanda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYourPanda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6E3221A73681300FAFBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B6E3231A73681300FAFBEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3B6E3251A73681300FAFBEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3B6E3251A73681300FAFBEE /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		E3B6E3281A73681300FAFBEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3B6E32A1A73681300FAFBEE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E3B6E32D1A73681300FAFBEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E3B6E3331A73681300FAFBEE /* GetYourPandaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetYourPandaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6E3381A73681300FAFBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B6E3391A73681300FAFBEE /* GetYourPandaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetYourPandaTests.swift; sourceTree = "<group>"; };
+		E3B6E3431A736A1B00FAFBEE /* PictureServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				E3B6E3231A73681300FAFBEE /* AppDelegate.swift */,
-				E3B6E3251A73681300FAFBEE /* ViewController.swift */,
+				E3B6E3251A73681300FAFBEE /* PictureViewController.swift */,
+				E3B6E3431A736A1B00FAFBEE /* PictureServices.swift */,
 				E3B6E3271A73681300FAFBEE /* Main.storyboard */,
 				E3B6E32A1A73681300FAFBEE /* Images.xcassets */,
 				E3B6E32C1A73681300FAFBEE /* LaunchScreen.xib */,
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B6E3261A73681300FAFBEE /* ViewController.swift in Sources */,
+				E3B6E3441A736A1B00FAFBEE /* PictureServices.swift in Sources */,
+				E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */,
 				E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
