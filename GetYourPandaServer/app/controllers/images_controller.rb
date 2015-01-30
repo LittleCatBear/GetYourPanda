@@ -13,6 +13,13 @@ class ImagesController < ApplicationController
 		redirect_to type_path(@type)
 	end
 
+#json utile pour le client
+	def show
+		@type = Type.find(params[:type_id])
+		@image = @type.images.find(params[:id])
+		render json: @image
+	end
+
 	private
 		def image_params
 			params.require(:image).permit(:url)
