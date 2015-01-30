@@ -5,11 +5,14 @@
 <table>
   <tr>
     <th>Title</th>
+    <th colspan="2">Action</th>
   </tr>
  
   <% @types.each do |type| %>
     <tr>
       <td><%= type.name %></td>
+      <td><%= link_to 'Show', type_path(type) %></td>
+      <td><%= link_to 'Edit', edit_type_path(type) %></td>
     </tr>
   <% end %>
 </table>

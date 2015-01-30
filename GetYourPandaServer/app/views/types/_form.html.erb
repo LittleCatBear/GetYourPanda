@@ -1,0 +1,25 @@
+<!-- form for new type -->
+<%= form_for @type do |f| %>
+
+<!-- error management -->
+	<% if @type.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@type.errors.count "error") %> Type unsaved:
+			</h2>
+			<ul>
+				<% @type.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end%>
+<!-- effective form -->
+	<p>
+		<%= f.label :name%><br>
+		<%= f.text_field :name%>
+	</p>
+	<p>
+		<%= f.submit%>
+	</p>
+<% end %>
