@@ -3,14 +3,12 @@
 	<%= @type.name %>
 </p>
 
-<%= form_for([@type, @type.images.build]) do |f| %>
-  <p>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
+<h2>Images</h2>
+<%= render @type.images %>
+
+<h2>Add new url</h2>
+<%= render 'images/form' %>
+
 <%= link_to "back", types_path %>
 <%= link_to 'Edit', edit_type_path(@type) %>
