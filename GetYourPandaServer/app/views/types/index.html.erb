@@ -1,11 +1,11 @@
 <h1>Listing types</h1>
-
+<br>
 <%= link_to "New type", new_type_path %>
-
+<br>
 <table>
   <tr>
     <th>Title</th>
-    <th colspan="2">Action</th>
+    <th colspan="3">Actions</th>
   </tr>
  
   <% @types.each do |type| %>
@@ -13,6 +13,11 @@
       <td><%= type.name %></td>
       <td><%= link_to 'Show', type_path(type) %></td>
       <td><%= link_to 'Edit', edit_type_path(type) %></td>
+      <td><%= link_to 'Destroy', type_path(type),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+<br>
+<%= link_to "New type", new_type_path %>

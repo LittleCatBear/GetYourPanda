@@ -37,7 +37,7 @@ class TypesController < ApplicationController
 	def destroy
 		@type = Type.find(params[:id])
 		@type.destroy
-		redirect_to 
+		redirect_to types_path
 	end
 
 	private
