@@ -10,4 +10,9 @@ import Foundation
 
 class RequestServices: NSObject {
     
+    func getTypes() -> NSArray
+    {
+        
+    }
+    
 }

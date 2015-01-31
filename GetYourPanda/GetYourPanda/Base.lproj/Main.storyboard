@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P29-aX-s8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P29-aX-s8P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -120,12 +121,12 @@
                             <mask key="constraints">
                                 <exclude reference="nbv-Oc-Ufi"/>
                                 <exclude reference="til-gs-rfa"/>
+                                <exclude reference="cUi-Rj-iha"/>
+                                <exclude reference="egI-vL-GVw"/>
+                                <exclude reference="nsR-Yh-sRc"/>
                                 <exclude reference="GvG-22-Vrt"/>
                                 <exclude reference="LyI-XA-Wql"/>
                                 <exclude reference="d8V-YW-2Fv"/>
-                                <exclude reference="egI-vL-GVw"/>
-                                <exclude reference="nsR-Yh-sRc"/>
-                                <exclude reference="cUi-Rj-iha"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -137,12 +138,12 @@
                             <mask key="constraints">
                                 <include reference="nbv-Oc-Ufi"/>
                                 <include reference="til-gs-rfa"/>
+                                <include reference="cUi-Rj-iha"/>
+                                <include reference="egI-vL-GVw"/>
+                                <include reference="nsR-Yh-sRc"/>
                                 <include reference="GvG-22-Vrt"/>
                                 <include reference="LyI-XA-Wql"/>
                                 <include reference="d8V-YW-2Fv"/>
-                                <include reference="egI-vL-GVw"/>
-                                <include reference="nsR-Yh-sRc"/>
-                                <include reference="cUi-Rj-iha"/>
                             </mask>
                         </variation>
                     </view>
