@@ -16,7 +16,7 @@ class ImagesController < ApplicationController
 	def show
 		@type = Type.find(params[:type_id])
 		@image = @type.images.find(params[:id])
-		#render json: @image
+		render json: @image
 	end
 
 	private

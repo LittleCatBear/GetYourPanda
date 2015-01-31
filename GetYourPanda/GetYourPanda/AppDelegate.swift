@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Notification
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         // Override point for customization after application launch.
-        
+  
+        return true
     }
     
     

@@ -10,19 +10,30 @@ import Foundation
 import UIKit
 
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var catSwitch: UISwitch!
-    @IBOutlet weak var redPandaSwitch: UISwitch!
+    @IBOutlet weak var typeChoiceTableView: UITableView!
+  
     let localNotification:UILocalNotification = UILocalNotification()
     
     override func viewDidLoad() {
-       
-      
-        
-        
         
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        return UITableViewCell()
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    {
+    }
+    
     
     @IBAction func goClickButton(sender: AnyObject) {
         localNotification.alertAction = "alert test"
