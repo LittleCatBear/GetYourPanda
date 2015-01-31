@@ -1,5 +1,4 @@
 class ImagesController < ApplicationController
-
 	def create
 		@type = Type.find(params[:type_id])
 		@image = @type.images.create(image_params)
@@ -17,11 +16,11 @@ class ImagesController < ApplicationController
 	def show
 		@type = Type.find(params[:type_id])
 		@image = @type.images.find(params[:id])
-		render json: @image
+		#render json: @image
 	end
 
 	private
 		def image_params
-			params.require(:image).permit(:url)
+			params.require(:image).permit(:url, :img)
 		end
 end

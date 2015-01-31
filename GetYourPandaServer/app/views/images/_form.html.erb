@@ -1,7 +1,13 @@
-<%= form_for([@type, @type.images.build]) do |f| %>
+<%= form_for([@type, @type.images.build]) do |f|%>
+
   <p>
     <%= f.label :url %><br>
     <%= f.text_field :url%>
+  </p>
+
+  <p>
+  	<%= f.label :image%><br>
+  	<%= f.file_field :img%>
   </p>
   <p>
     <%= f.submit %>
