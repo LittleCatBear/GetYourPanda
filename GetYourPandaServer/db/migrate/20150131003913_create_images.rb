@@ -3,6 +3,7 @@ class CreateImages < ActiveRecord::Migration
     create_table :images do |t|
       t.string :url
       t.references :type, index: true
+      t.attachment :img
 
       t.timestamps null: false
     end

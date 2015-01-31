@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E331D2211A73742200ACDBFF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E331D2201A73742200ACDBFF /* SettingsViewController.swift */; };
+		E376ED001A7C26C1005E99A2 /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376ECFF1A7C26C1005E99A2 /* RequestServices.swift */; };
 		E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3231A73681300FAFBEE /* AppDelegate.swift */; };
 		E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E3251A73681300FAFBEE /* PictureViewController.swift */; };
 		E3B6E3291A73681300FAFBEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B6E3271A73681300FAFBEE /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		E331D2201A73742200ACDBFF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E376ECFF1A7C26C1005E99A2 /* RequestServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
 		E3B6E31E1A73681300FAFBEE /* GetYourPanda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYourPanda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B6E3221A73681300FAFBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B6E3231A73681300FAFBEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E3B6E3231A73681300FAFBEE /* AppDelegate.swift */,
+				E376ECFF1A7C26C1005E99A2 /* RequestServices.swift */,
 				E3B6E3251A73681300FAFBEE /* PictureViewController.swift */,
 				E3B6E3431A736A1B00FAFBEE /* PictureServices.swift */,
 				E3B6E3271A73681300FAFBEE /* Main.storyboard */,
@@ -221,6 +224,7 @@
 				E3B6E3441A736A1B00FAFBEE /* PictureServices.swift in Sources */,
 				E3B6E3261A73681300FAFBEE /* PictureViewController.swift in Sources */,
 				E3B6E3241A73681300FAFBEE /* AppDelegate.swift in Sources */,
+				E376ED001A7C26C1005E99A2 /* RequestServices.swift in Sources */,
 				E331D2211A73742200ACDBFF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
