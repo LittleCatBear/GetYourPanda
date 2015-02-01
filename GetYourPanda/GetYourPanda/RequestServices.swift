@@ -10,22 +10,22 @@ import Foundation
 
 protocol RequestServicesProtocol
 {
-    func didReceiveRequestServicesResults(results: NSDictionary)
+    func didReceiveRequestServicesResults(results: NSArray)
 }
 
 class RequestServices: NSObject {
+    
+    override init() {
+    }
+    
+    var delegate: RequestServicesProtocol?
     
     var urlController : UrlController = UrlController()
     
     func getTypes()
     {
-        let request = NSMutableURLRequest(URL: urlController.getTypesUrl)
         let session = NSURLSession.sharedSession()
-        
-        request.HTTPMethod = "GET"
-      //  request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+        let task = session.dataTaskWithURL(urlController.getTypesUrl, completionHandler: {data, response, error -> Void in
             println("task completed")
             
             if(error != nil){
@@ -34,16 +34,20 @@ class RequestServices: NSObject {
             
             var err : NSError?
 
-            var json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+            var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            //println(json["id"])
             if(err != nil){
                 println("json error \(err!.localizedDescription)")
             }
+
+            println("no json error")
+            //let results : NSArray = json["results"] as NSArray
+            self.delegate?.didReceiveRequestServicesResults(json)
             
-            let results : NSArray = json["results"] as NSArray
       
-            })
-            task.resume()
-        }
+        })
+        task.resume()
+    }
 }
     
 

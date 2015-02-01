@@ -11,10 +11,14 @@ import UIKit
 
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RequestServicesProtocol {
-    
+
     @IBOutlet weak var typeChoiceTableView: UITableView!
+    
+    let customCell: String =  "typeCell"
   
     let localNotification:UILocalNotification = UILocalNotification()
+    
+    let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     var requestServices = RequestServices()
     var tableData = []
@@ -22,13 +26,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     override func viewDidLoad() {
+        
         requestServices.getTypes()
+        self.requestServices.delegate = self
     }
     
-    func didReceiveRequestServicesResults(results: NSDictionary) {
-        var resultsArr : NSArray = results["results"] as NSArray
+    func didReceiveRequestServicesResults(results: NSArray) {
+        //var resultsArr : NSArray = results["results"] as NSArray
         dispatch_async(dispatch_get_main_queue(), {
-            self.tableData = resultsArr
+            self.tableData = results
             self.typeChoiceTableView!.reloadData()
         })
     }
@@ -40,20 +46,24 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell : UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "typeCell")
+        let cell : UITableViewCell = typeChoiceTableView.dequeueReusableCellWithIdentifier(customCell) as UITableViewCell
+        
         let rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
         
         cell.textLabel?.text = rowData["name"] as? NSString
+        
       //  cell.detailTextLabel?.text = "subtitle #\(indexPath.row)"
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let tempData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        println(tempData["id"])
+        userDefaults.setObject(tempData["id"], forKey: "type_id")
         //stocker le n° selectionné dans les settings user
     }
-    
     
     @IBAction func goClickButton(sender: AnyObject) {
         localNotification.alertAction = "alert test"
