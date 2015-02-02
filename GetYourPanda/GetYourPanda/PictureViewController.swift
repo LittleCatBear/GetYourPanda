@@ -51,7 +51,6 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        println("test")
     }
     
     //handler for the alert msg when saving image
@@ -63,7 +62,6 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
     
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
     
     // Create or check existing group for picture & save picture in the group
     func addImage(image:UIImage, toAlbum albumName:String, orientation : ALAssetOrientation, handler:CompletionHandler){
@@ -119,25 +117,25 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
     }
     
     func didReceiveRequestServicesResults(results: NSDictionary) {
-        //var resultsArr : NSArray = results["results"] as NSArray
+        
         dispatch_async(dispatch_get_main_queue(), {
-            //  self.tableData = results
-            //let rowData: NSDictionary = self.tableData[0] as NSDictionary
             var path: NSString = results["path"] as NSString
-            println(path )
             var urlString = "http://localhost:3000" + "\(path)"
-            
             var imgUrl : NSURL = NSURL(string: urlString)!
             
             //get img with url imgUrl
             
-            let dataImg = NSData(contentsOfURL: imgUrl)
-            println(dataImg)//make sure your image in this url does exist, otherwise unwrap in a if let check
-            self.customImageView.image = UIImage(data: dataImg!)
+            var request: NSURLRequest = NSURLRequest(URL: imgUrl)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                self.customImageView.image = UIImage(data: data)
+                //cell.myImage.image = image
+            })
             
+            let dataImg = NSData(contentsOfURL: imgUrl)
+            //make sure your image in this url does exist, otherwise unwrap in a if let check
+            //self.customImageView.image = UIImage(data: dataImg!)
         })
     }
-
 
 }
 
