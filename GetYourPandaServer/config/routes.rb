@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   # resources declaration
   resources :types do
-    resources :images
+    resources :images do
+      collection do
+        get "random"
+      end
+    end
   end
   
   root 'welcome#index'
