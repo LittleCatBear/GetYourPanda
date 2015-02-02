@@ -39,6 +39,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         })
     }
     
+    func didReceiveRequestServicesResults(results: NSDictionary) {
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return tableData.count

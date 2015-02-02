@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+
 	def create
 		@type = Type.find(params[:type_id])
 		@image = @type.images.create(image_params)
@@ -24,7 +25,8 @@ class ImagesController < ApplicationController
 		#@images = @type.images.all
 		c = @type.images.count
 		@image = @type.images.offset(rand(c)).first
-		render json: @image
+		#rend le chemin relatif de l'image
+		render json: URI.join(request.url, @image.img.url)
 	end
 
 	private

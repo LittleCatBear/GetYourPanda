@@ -11,6 +11,7 @@ import Foundation
 protocol RequestServicesProtocol
 {
     func didReceiveRequestServicesResults(results: NSArray)
+    func didReceiveRequestServicesResults(results: NSDictionary)
 }
 
 class RequestServices: NSObject {
@@ -27,7 +28,6 @@ class RequestServices: NSObject {
     {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(urlController.getTypesUrl, completionHandler: {data, response, error -> Void in
-            println("task completed")
             
             if(error != nil){
                 println(error!.localizedDescription)
@@ -35,34 +35,30 @@ class RequestServices: NSObject {
             
             var err : NSError?
             var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
-            //println(json["id"])
             if(err != nil){
                 println("json error \(err!.localizedDescription)")
             }
 
-            println("no json error")
-            //let results : NSArray = json["results"] as NSArray
             self.delegate?.didReceiveRequestServicesResults(json)
         })
         task.resume()
     }
     
-    func getRandomPicture(typeId : NSInteger)
+    func getRandomPicturePath(typeId : NSInteger)
     {
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(urlController.getRandomPictureUrlbyTypeId(typeId), completionHandler: { (data, response, error) -> Void in
-            println("get random img request completed")
             
             if(error != nil){
                 println(error!.localizedDescription)
             }
             
             var err: NSError?
-            var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            
+            var json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
             if(err != nil){
                 println("json error")
             }
-            println("no json error for random img")
             self.delegate?.didReceiveRequestServicesResults(json)
         })
         task.resume()

@@ -9,17 +9,20 @@
 import UIKit
 import AssetsLibrary
 
-class PictureViewController: UIViewController, UIApplicationDelegate {
+class PictureViewController: UIViewController, UIApplicationDelegate, RequestServicesProtocol {
     
     @IBOutlet weak var customImageView: UIImageView!
-    let pictureServices : PictureServices = PictureServices()
+    let requestServices : RequestServices  = RequestServices()
+    let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     var assetsLibrary: ALAssetsLibrary?
     typealias CompletionHandler = (success:Bool!) -> Void
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //customImageView.image = requestServices.image
         assetsLibrary = ALAssetsLibrary()
     }
 
@@ -40,7 +43,10 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        customImageView.image = pictureServices.getRedPanda()
+        
+        self.requestServices.delegate = self
+        var type: NSInteger? = userDefaults.objectForKey("type_id") as? NSInteger
+        requestServices.getRandomPicturePath(type!)
         
     }
     
@@ -108,6 +114,30 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
                 handler(success: false);
         });
     }
+    
+    func didReceiveRequestServicesResults(results: NSArray) {
+    }
+    
+    func didReceiveRequestServicesResults(results: NSDictionary) {
+        //var resultsArr : NSArray = results["results"] as NSArray
+        dispatch_async(dispatch_get_main_queue(), {
+            //  self.tableData = results
+            //let rowData: NSDictionary = self.tableData[0] as NSDictionary
+            var path: NSString = results["path"] as NSString
+            println(path )
+            var urlString = "http://localhost:3000" + "\(path)"
+            
+            var imgUrl : NSURL = NSURL(string: urlString)!
+            
+            //get img with url imgUrl
+            
+            let dataImg = NSData(contentsOfURL: imgUrl)
+            println(dataImg)//make sure your image in this url does exist, otherwise unwrap in a if let check
+            self.customImageView.image = UIImage(data: dataImg!)
+            
+        })
+    }
+
 
 }
 
