@@ -32,6 +32,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         requestServices.getTypes()
         self.requestServices.delegate = self
         self.timePicker.datePickerMode = UIDatePickerMode.Time
+        
     }
     
     func didReceiveRequestServicesResults(results: NSArray) {
@@ -73,9 +74,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func goClickButton(sender: AnyObject) {
         localNotification.alertAction = "alert test"
-        localNotification.alertBody =  "body of alert"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow : 5)
-        localNotification
+        localNotification.alertBody =  "Your daily cuteness is available !"
+        localNotification.fireDate = self.timePicker.date
+        localNotification.repeatInterval = NSCalendarUnit.CalendarUnitMinute
+        //localNotification
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
  
