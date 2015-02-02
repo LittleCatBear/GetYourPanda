@@ -21,28 +21,49 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8hJ-Xd-UUc">
                                 <rect key="frame" x="0.0" y="20" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mn-gz-GDL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveClickButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="THN-6R-lpN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8hJ-Xd-UUc" secondAttribute="trailing" id="6XU-ZT-rzi"/>
+                            <constraint firstAttribute="centerX" secondItem="3Mn-gz-GDL" secondAttribute="centerX" id="AGv-oB-Fbe"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8hJ-Xd-UUc" secondAttribute="bottom" id="cFF-EV-Vw7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3Mn-gz-GDL" secondAttribute="bottom" constant="20" id="fDS-fu-Few"/>
                             <constraint firstItem="8hJ-Xd-UUc" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="gGN-tY-eO1"/>
                             <constraint firstItem="8hJ-Xd-UUc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="zDW-wT-DOw"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3Mn-gz-GDL"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="6XU-ZT-rzi"/>
                                 <exclude reference="gGN-tY-eO1"/>
                                 <exclude reference="zDW-wT-DOw"/>
+                                <exclude reference="AGv-oB-Fbe"/>
                                 <exclude reference="cFF-EV-Vw7"/>
+                                <exclude reference="fDS-fu-Few"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3Mn-gz-GDL"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="6XU-ZT-rzi"/>
                                 <include reference="gGN-tY-eO1"/>
                                 <include reference="zDW-wT-DOw"/>
+                                <include reference="AGv-oB-Fbe"/>
                                 <include reference="cFF-EV-Vw7"/>
+                                <include reference="fDS-fu-Few"/>
                             </mask>
                         </variation>
                     </view>
