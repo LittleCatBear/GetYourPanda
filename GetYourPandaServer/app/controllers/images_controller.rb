@@ -19,6 +19,14 @@ class ImagesController < ApplicationController
 		render json: @image
 	end
 
+	def random
+		@type = Type.find(params[:type_id])
+		#@images = @type.images.all
+		c = @type.images.count
+		@image = @type.images.offset(rand(c)).first
+		render json: @image
+	end
+
 	private
 		def image_params
 			params.require(:image).permit(:url, :img)
