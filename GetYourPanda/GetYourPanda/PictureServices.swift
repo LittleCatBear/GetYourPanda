@@ -11,6 +11,10 @@ import UIKit
 
 class PictureServices {
     
+    var requestServices : RequestServices = RequestServices()
+    
+    
+    /*
     let cats : [String] = ["chat1", "chat2", "chat3", "chat4"]
     let redPandas : [String] = ["panda1", "panda2", "panda3", "panda4", "panda5"]
     
@@ -26,5 +30,6 @@ class PictureServices {
         let cat : UIImage = UIImage(named: cats[randNum])!
         return cat
     }
+*/
 
 }

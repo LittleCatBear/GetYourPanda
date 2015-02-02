@@ -20,6 +20,7 @@ class RequestServices: NSObject {
     
     var delegate: RequestServicesProtocol?
     
+    //manager of Urls
     var urlController : UrlController = UrlController()
     
     func getTypes()
@@ -33,7 +34,6 @@ class RequestServices: NSObject {
             }
             
             var err : NSError?
-
             var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
             //println(json["id"])
             if(err != nil){
@@ -43,8 +43,27 @@ class RequestServices: NSObject {
             println("no json error")
             //let results : NSArray = json["results"] as NSArray
             self.delegate?.didReceiveRequestServicesResults(json)
+        })
+        task.resume()
+    }
+    
+    func getRandomPicture(typeId : NSInteger)
+    {
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithURL(urlController.getRandomPictureUrlbyTypeId(typeId), completionHandler: { (data, response, error) -> Void in
+            println("get random img request completed")
             
-      
+            if(error != nil){
+                println(error!.localizedDescription)
+            }
+            
+            var err: NSError?
+            var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            if(err != nil){
+                println("json error")
+            }
+            println("no json error for random img")
+            self.delegate?.didReceiveRequestServicesResults(json)
         })
         task.resume()
     }
