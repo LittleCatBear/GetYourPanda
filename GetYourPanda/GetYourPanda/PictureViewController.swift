@@ -41,6 +41,10 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
 
     }
     
+    //renvoie sur la page d'accueil
+    @IBAction func homeButtonTapped(sender: UIButton) {
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
@@ -120,20 +124,14 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
         
         dispatch_async(dispatch_get_main_queue(), {
             var path: NSString = results["path"] as NSString
-            var urlString = "http://localhost:3000" + "\(path)"
+            var urlString : NSString = "http://localhost:3000" + "\(path)"
             var imgUrl : NSURL = NSURL(string: urlString)!
             
             //get img with url imgUrl
-            
             var request: NSURLRequest = NSURLRequest(URL: imgUrl)
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
                 self.customImageView.image = UIImage(data: data)
-                //cell.myImage.image = image
             })
-            
-            let dataImg = NSData(contentsOfURL: imgUrl)
-            //make sure your image in this url does exist, otherwise unwrap in a if let check
-            //self.customImageView.image = UIImage(data: dataImg!)
         })
     }
 

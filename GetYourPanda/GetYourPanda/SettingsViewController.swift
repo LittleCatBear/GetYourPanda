@@ -14,6 +14,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var typeChoiceTableView: UITableView!
     
+    @IBOutlet weak var timePicker: UIDatePicker!
+    
     let customCell: String =  "typeCell"
   
     let localNotification:UILocalNotification = UILocalNotification()
@@ -29,6 +31,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         requestServices.getTypes()
         self.requestServices.delegate = self
+        self.timePicker.datePickerMode = UIDatePickerMode.Time
     }
     
     func didReceiveRequestServicesResults(results: NSArray) {
