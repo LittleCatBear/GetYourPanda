@@ -2,8 +2,14 @@ class TypesController < ApplicationController
 
 	def index
 		@types = Type.all
-		render json: @types
+		respond_to do |format|
+			format.html
+			format.json{
+				render json: @types
+			}
+		end
 	end
+	
 	def show
 		@type = Type.find(params[:id])
 		respond_to do |format|

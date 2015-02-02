@@ -48,6 +48,7 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
         println("test")
     }
     
+    //handler for the alert msg when saving image
     func alertHandler(msg: NSString){
         
         let alertController = UIAlertController(title: "Picture status", message:
@@ -56,6 +57,8 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
     
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    
     // Create or check existing group for picture & save picture in the group
     func addImage(image:UIImage, toAlbum albumName:String, orientation : ALAssetOrientation, handler:CompletionHandler){
         
@@ -96,12 +99,12 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
                     } /*Group Is Not nil*/
                 },
                 failureBlock: { (error:NSError!) -> Void in
-                    print("Failed to find group");
+                    self.alertHandler("Oops, something went wrong :( /n Cuteness not saved because group unfound")
                     handler(success: false);
             });
             
             }, failureBlock: { (error:NSError!) -> Void in
-                print("Failed to create \(error)");
+                self.alertHandler("Oops, something went wrong :( /n Cuteness not saved because group failed to be created")
                 handler(success: false);
         });
     }

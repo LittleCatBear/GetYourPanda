@@ -11,7 +11,7 @@ import UIKit
 
 class UrlController : NSObject {
     
-    var getTypesUrl : NSURL = NSURL(string: "http://localhost:3000/types")!
+    var getTypesUrl : NSURL = NSURL(string: "http://localhost:3000/types.json")!
     var pictureUrl : NSURL?
     
     func getPictureUrlbyTypeIdAndByPictureId(typeId : NSInteger, pictureId : NSInteger ) -> NSURL
