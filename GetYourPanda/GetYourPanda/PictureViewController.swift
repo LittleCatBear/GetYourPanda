@@ -48,6 +48,14 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
         println("test")
     }
     
+    func alertHandler(msg: NSString){
+        
+        let alertController = UIAlertController(title: "Picture status", message:
+            msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok, great!", style: UIAlertActionStyle.Default,handler: nil))
+    
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     // Create or check existing group for picture & save picture in the group
     func addImage(image:UIImage, toAlbum albumName:String, orientation : ALAssetOrientation, handler:CompletionHandler){
         
@@ -75,10 +83,11 @@ class PictureViewController: UIViewController, UIApplicationDelegate {
                                             var yes:Bool? = groupToAddTo?.addAsset(asset);
                                             if (yes == true){
                                                 handler(success: true);
+                                                self.alertHandler("Yay, cuteness saved ! \\o/")
                                             }
                                         },
                                         failureBlock: { (error2:NSError!) -> Void in
-                                            print("Failed to add asset");
+                                            self.alertHandler("Oops, something went wrong :( /n Cuteness not saved")
                                             handler(success: false);
                                     });
                                 }
