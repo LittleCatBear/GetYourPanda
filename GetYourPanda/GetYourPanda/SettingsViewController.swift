@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var typeChoiceTableView: UITableView!
     
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var goButton: UIButton!
     
     let customCell: String =  "typeCell"
   
@@ -31,15 +32,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         requestServices.getTypes()
         self.requestServices.delegate = self
-        self.timePicker.datePickerMode = UIDatePickerMode.Time
+      //  self.timePicker.datePickerMode = UIDatePickerMode.Time
+     //   self.goButton.layer.cornerRadius = 5
+        initBg()
         
     }
     
     func didReceiveRequestServicesResults(results: NSArray) {
-        //var resultsArr : NSArray = results["results"] as NSArray
+       // var resultsArr : NSArray = results["results"] as NSArray
         dispatch_async(dispatch_get_main_queue(), {
             self.tableData = results
-            self.typeChoiceTableView!.reloadData()
+            //self.typeChoiceTableView!.reloadData()
         })
     }
     
@@ -79,6 +82,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         localNotification.repeatInterval = NSCalendarUnit.CalendarUnitMinute
         //localNotification
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+    func initBg(){
+        let rect : CGRect = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
+        var vista : UIView = UIView(frame: rect)
+        let gradient : CAGradientLayer = CAGradientLayer()
+        gradient.frame = vista.bounds
+        
+        let cor1 = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 220.0/255.0, alpha: 1.0).CGColor
+        let cor2 = UIColor.whiteColor().CGColor
+        let arrayColors = [cor1, cor2]
+        
+        gradient.colors = arrayColors
+        view.layer.insertSublayer(gradient, atIndex: 0)
     }
  
     
