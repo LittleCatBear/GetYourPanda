@@ -90,11 +90,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         gradient.frame = vista.bounds
         
         let cor1 = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue: 220.0/255.0, alpha: 1.0).CGColor
+        //let cor2 = UIColor(red: 39.0/255.0, green: 160.0/255.0, blue: 255.0/255.0, alpha: 1.0).CGColor
         let cor2 = UIColor.whiteColor().CGColor
         let arrayColors = [cor1, cor2]
         
         gradient.colors = arrayColors
-        view.layer.insertSublayer(gradient, atIndex: 0)
+        view.layer.insertSublayer(gradient, atIndex: 300)
     }
  
     
