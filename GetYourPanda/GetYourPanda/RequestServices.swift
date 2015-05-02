@@ -11,7 +11,7 @@ import Foundation
 protocol RequestServicesProtocol
 {
     func didReceiveRequestServicesResults(results: NSArray)
-    func didReceiveRequestServicesResults(results: NSDictionary)
+    func didReceiveRequestServicesResultsNS(results: NSDictionary)
 }
 
 class RequestServices: NSObject {
@@ -34,7 +34,7 @@ class RequestServices: NSObject {
             }
             
             var err : NSError?
-            var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            var json : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSArray
             if(err != nil){
                 println("json error \(err!.localizedDescription)")
             }
@@ -55,11 +55,11 @@ class RequestServices: NSObject {
             
             var err: NSError?
             
-            var json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+            var json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
             if(err != nil){
                 println("json error")
             }
-            self.delegate?.didReceiveRequestServicesResults(json)
+            self.delegate?.didReceiveRequestServicesResultsNS(json)
         })
         task.resume()
     }

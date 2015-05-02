@@ -17,7 +17,7 @@ class UrlController : NSObject {
     func getRandomPictureUrlbyTypeId(typeId : NSInteger) -> NSURL
     {
         var urlPicture : NSString = "http://localhost:3000/types/"+"\(typeId)"+"/images/random"
-        return NSURL(string: urlPicture)!
+        return NSURL(string: urlPicture as String)!
     }
 }
 

@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var viewController: PictureViewController = storyboard.instantiateViewControllerWithIdentifier("PictureViewController") as PictureViewController
-        var rootViewController = self.window!.rootViewController as UINavigationController
+        var viewController: PictureViewController = storyboard.instantiateViewControllerWithIdentifier("PictureViewController") as! PictureViewController
+        var rootViewController = self.window!.rootViewController as! UINavigationController
         rootViewController.pushViewController(viewController, animated: false)
     }
 

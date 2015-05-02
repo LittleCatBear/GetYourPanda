@@ -46,7 +46,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         })
     }
     
-    func didReceiveRequestServicesResults(results: NSDictionary) {
+    func didReceiveRequestServicesResultsNS(results: NSDictionary) {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -56,11 +56,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell : UITableViewCell = typeChoiceTableView.dequeueReusableCellWithIdentifier(customCell) as UITableViewCell
+        let cell : UITableViewCell = typeChoiceTableView.dequeueReusableCellWithIdentifier(customCell) as! UITableViewCell
         
-        let rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        let rowData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
         
-        cell.textLabel?.text = rowData["name"] as? NSString
+        cell.textLabel?.text = (rowData["name"] as! String)
         
       //  cell.detailTextLabel?.text = "subtitle #\(indexPath.row)"
         
@@ -69,7 +69,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let tempData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        let tempData: NSDictionary = self.tableData[indexPath.row] as! NSDictionary
         println(tempData["id"])
         userDefaults.setObject(tempData["id"], forKey: "type_id")
         //stocker le n° selectionné dans les settings user

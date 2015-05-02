@@ -61,7 +61,7 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
     func alertHandler(msg: NSString){
         
         let alertController = UIAlertController(title: "Picture status", message:
-            msg, preferredStyle: UIAlertControllerStyle.Alert)
+            msg as String, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok, great!", style: UIAlertActionStyle.Default,handler: nil))
     
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -81,7 +81,7 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
                     
                     if(group != nil){
                         
-                        if group!.valueForProperty(ALAssetsGroupPropertyName) as String == albumName{
+                        if group!.valueForProperty(ALAssetsGroupPropertyName) as! String == albumName{
                             groupToAddTo = group;
                             
                             print("\nGroup Found \(group!.valueForProperty(ALAssetsGroupPropertyName))\n");
@@ -117,15 +117,16 @@ class PictureViewController: UIViewController, UIApplicationDelegate, RequestSer
         });
     }
     
-    func didReceiveRequestServicesResults(results: NSArray) {
+    func didReceiveRequestServicesResults(results: NSArray){
+        
     }
     
-    func didReceiveRequestServicesResults(results: NSDictionary) {
+    func didReceiveRequestServicesResultsNS(results: NSDictionary) {
         
         dispatch_async(dispatch_get_main_queue(), {
-            var path: NSString = results["path"] as NSString
+            var path: NSString = results["path"] as! NSString
             var urlString : NSString = "http://localhost:3000" + "\(path)"
-            var imgUrl : NSURL = NSURL(string: urlString)!
+            var imgUrl : NSURL = NSURL(string: urlString as String)!
             
             //get img with url imgUrl
             var request: NSURLRequest = NSURLRequest(URL: imgUrl)

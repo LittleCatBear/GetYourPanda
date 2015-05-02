@@ -22,12 +22,12 @@ class PictureServices: RequestServicesProtocol {
     func didReceiveRequestServicesResults(results: NSArray) {
     }
     
-    func didReceiveRequestServicesResults(results: NSDictionary) {
+    func didReceiveRequestServicesResultsNS(results: NSDictionary) {
         //var resultsArr : NSArray = results["results"] as NSArray
         dispatch_async(dispatch_get_main_queue(), {
           //  self.tableData = results
             //let rowData: NSDictionary = self.tableData[0] as NSDictionary
-            var path: NSString = results["path"] as NSString
+            var path: NSString = results["path"] as! NSString
             println(path )
             var urlString = "http://localhost:3000" + "\(path)"
           

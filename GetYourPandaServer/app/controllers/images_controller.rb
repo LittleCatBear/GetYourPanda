@@ -29,6 +29,7 @@ class ImagesController < ApplicationController
 		render json: URI.join(request.url, @image.img.url)
 	end
 
+
 	private
 		def image_params
 			params.require(:image).permit(:url, :img)
